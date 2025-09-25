@@ -17,7 +17,7 @@ public class BookingController {
     @Autowired
     BookingService bookingService;
 
-    @GetMapping("/availability")
+    @GetMapping("/seats/availability")
     public List<SeatAvailability> getSeatAvailability(
             @RequestParam(required = false) String showId,
             @RequestParam(required = false) String movieId
