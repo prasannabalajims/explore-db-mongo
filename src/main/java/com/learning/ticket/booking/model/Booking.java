@@ -1,4 +1,4 @@
-package com.learning.explore.db.model;
+package com.learning.ticket.booking.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,17 +11,19 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
 import java.util.List;
 
-@Document("shows")
+@Document("bookings")
 @CompoundIndexes({
-        @CompoundIndex(name="movie_start_idx", def = "{'movieId':1, 'startTime':1}"),
-        @CompoundIndex(name="theater_start_idx", def = "{'theaterId':1, 'startTime':1}")
+        @CompoundIndex(name="user_idx", def = "{'userId':1}"),
+        @CompoundIndex(name="show_idx", def = "{'showId':1}")
 })
 @Data @AllArgsConstructor @NoArgsConstructor
-public class Show {
+public class Booking {
     @Id
     private String id;
-    private String movieId;
-    private String theaterId;
-    private Date startTime;
-    private List<Seat> seats; // embedded — availability per show
+    private String showId;
+    private String userId;
+    private List<String> seatNumbers;
+    private double amount;
+    private String status; // CONFIRMED / CANCELLED
+    private Date createdAt;
 }

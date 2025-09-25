@@ -1,13 +1,13 @@
-package com.learning.explore.db;
+package com.learning.ticket.booking;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ExploreDbMongoApplication {
+public class TicketBookingApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ExploreDbMongoApplication.class, args);
+        SpringApplication.run(TicketBookingApplication.class, args);
     }
 
 }

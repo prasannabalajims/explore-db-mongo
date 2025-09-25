@@ -1,8 +1,8 @@
-package com.learning.explore.db.controller;
+package com.learning.ticket.booking.controller;
 
-import com.learning.explore.db.dto.BookingRequest;
-import com.learning.explore.db.dto.SeatAvailability;
-import com.learning.explore.db.service.BookingService;
+import com.learning.ticket.booking.dto.BookingRequest;
+import com.learning.ticket.booking.dto.SeatAvailability;
+import com.learning.ticket.booking.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

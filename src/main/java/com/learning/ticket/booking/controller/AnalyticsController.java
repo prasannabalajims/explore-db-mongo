@@ -1,7 +1,7 @@
-package com.learning.explore.db.controller;
+package com.learning.ticket.booking.controller;
 
-import com.learning.explore.db.dto.ShowRevenue;
-import com.learning.explore.db.service.AnalyticsService;
+import com.learning.ticket.booking.dto.ShowRevenue;
+import com.learning.ticket.booking.service.AnalyticsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

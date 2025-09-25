@@ -1,12 +1,12 @@
-package com.learning.explore.db.util;
+package com.learning.ticket.booking.util;
 
-import com.learning.explore.db.model.Movie;
-import com.learning.explore.db.model.Seat;
-import com.learning.explore.db.model.Show;
-import com.learning.explore.db.model.User;
-import com.learning.explore.db.repository.MovieRepository;
-import com.learning.explore.db.repository.ShowRepository;
-import com.learning.explore.db.repository.UserRepository;
+import com.learning.ticket.booking.model.Movie;
+import com.learning.ticket.booking.model.Seat;
+import com.learning.ticket.booking.model.Show;
+import com.learning.ticket.booking.model.User;
+import com.learning.ticket.booking.repository.MovieRepository;
+import com.learning.ticket.booking.repository.ShowRepository;
+import com.learning.ticket.booking.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

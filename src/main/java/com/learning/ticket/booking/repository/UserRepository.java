@@ -1,6 +1,6 @@
-package com.learning.explore.db.repository;
+package com.learning.ticket.booking.repository;
 
-import com.learning.explore.db.model.User;
+import com.learning.ticket.booking.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;

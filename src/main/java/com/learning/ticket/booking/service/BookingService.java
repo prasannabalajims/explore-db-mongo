@@ -1,8 +1,8 @@
-package com.learning.explore.db.service;
+package com.learning.ticket.booking.service;
 
-import com.learning.explore.db.dto.SeatAvailability;
-import com.learning.explore.db.model.Booking;
-import com.learning.explore.db.repository.BookingRepository;
+import com.learning.ticket.booking.dto.SeatAvailability;
+import com.learning.ticket.booking.model.Booking;
+import com.learning.ticket.booking.repository.BookingRepository;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.*;
 import org.bson.Document;

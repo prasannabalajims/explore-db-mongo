@@ -1,4 +1,4 @@
-package com.learning.explore.db.configuration;
+package com.learning.ticket.booking.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;

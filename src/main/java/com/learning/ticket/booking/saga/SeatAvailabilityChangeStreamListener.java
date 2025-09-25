@@ -1,6 +1,6 @@
-package com.learning.explore.db.saga;
+package com.learning.ticket.booking.saga;
 
-import com.learning.explore.db.dto.SeatAvailability;
+import com.learning.ticket.booking.dto.SeatAvailability;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.changestream.ChangeStreamDocument;
 import jakarta.annotation.PostConstruct;
@@ -41,7 +41,7 @@ public class SeatAvailabilityChangeStreamListener {
                     }
 
                     SeatAvailability dto = new SeatAvailability(
-                            updatedShow.getString("_id"),
+                            updatedShow.get("_id").toString(),
                             movieName,
                             (int) availableSeats
                     );

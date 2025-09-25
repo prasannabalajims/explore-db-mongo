@@ -1,4 +1,4 @@
-package com.learning.explore.db.model;
+package com.learning.ticket.booking.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

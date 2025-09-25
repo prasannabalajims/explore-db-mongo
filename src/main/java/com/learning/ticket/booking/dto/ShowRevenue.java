@@ -1,4 +1,4 @@
-package com.learning.explore.db.dto;
+package com.learning.ticket.booking.dto;
 
 import lombok.Data;
 

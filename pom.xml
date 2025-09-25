@@ -8,10 +8,10 @@
         <version>3.3.4</version>
         <relativePath/>
     </parent>
-    <groupId>com.learning.explore.db</groupId>
-    <artifactId>explore-db-mongo</artifactId>
+    <groupId>com.learning.ticket.booking</groupId>
+    <artifactId>ticket-booking</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>explore-db-mongo</name>
+    <name>ticket-booking</name>
     <description>Ticket reservation project with Spring Boot and MongoDB</description>
     <url/>
     <licenses>

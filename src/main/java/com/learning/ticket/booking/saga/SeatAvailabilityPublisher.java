@@ -1,4 +1,4 @@
-package com.learning.explore.db.saga;
+package com.learning.ticket.booking.saga;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
