@@ -1,5 +1,6 @@
 package com.learning.explore.db.service;
 
+import com.learning.explore.db.dto.SeatAvailability;
 import com.learning.explore.db.model.Booking;
 import com.learning.explore.db.repository.BookingRepository;
 import com.mongodb.client.MongoCollection;
@@ -9,11 +10,16 @@ import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.aggregation.*;
+import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
 
 @Service
 public class BookingService {
@@ -23,7 +29,42 @@ public class BookingService {
     @Autowired
     BookingRepository bookingRepository;
 
-    public String performSeatReservation(String userId, String showId, List<String> seatNumbers) {
+    public List<SeatAvailability> getSeatAvailability(String showId, String movieId) {
+        List<AggregationOperation> operations = new ArrayList<>();
+
+        if(showId != null) {
+            operations.add(match(Criteria.where("_id").is(showId)));
+        }
+
+        if(movieId != null) {
+            operations.add(match(Criteria.where("movieId").is(movieId)));
+        }
+
+        operations.add(unwind("seats"));
+
+        operations.add(match(Criteria.where("seats.status").is("AVAILABLE")));
+
+        operations.add(LookupOperation.newLookup()
+                .from("movies")
+                .localField("movieId")
+                .foreignField("_id")
+                .as("movieDetails"));
+
+        GroupOperation group = group("_id")
+                .first("movieDetails.title").as("movieName")
+                .count().as("availableSeats");
+
+        operations.add(group);
+
+        Aggregation aggregation = newAggregation(operations);
+
+        return mongoTemplate.aggregate(aggregation, "shows", SeatAvailability.class)
+                .getMappedResults();
+
+    }
+
+
+        public String performSeatReservation(String userId, String showId, List<String> seatNumbers) {
         MongoCollection<Document> collection = mongoTemplate.getCollection("shows");
 
         // STEP 1 : Attempt update if the requested Seats are available
